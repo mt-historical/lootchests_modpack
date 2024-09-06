@@ -2,6 +2,8 @@ lootchests = {}
 
 lootchests.loot_table = {}
 
+local S = minetest.get_translator(minetest.get_current_modname())
+
 local debug = minetest.settings:get("lootchests_debug") or false
 
 local function list_length(list)
@@ -24,12 +26,12 @@ end
 lootchests.register_lootchest = function(def)
 
     if not def.name or not def.description then
-        minetest.log("error", "[lootchests] Missing fields in chest definition!")
+        minetest.log("error", S("[lootchests] Missing fields in chest definition!"))
         return
     end
 
     if not lootchests.loot_table[def.name] then
-        minetest.log("error", "[lootchests] Missing loot table for " .. def.name .. "!")
+        minetest.log("error", S("[lootchests] Missing loot table for") .. " " .. def.name .. "!")
         return
     end
 
@@ -63,7 +65,7 @@ lootchests.register_lootchest = function(def)
 
     minetest.register_node(def.name .. "_marker", {
         drawtype = marker_drawtype,
-        description = def.description .. " Spawn Marker",
+        description = def.description .. " " .. S("Spawn Marker"),
         tiles = {"lootchests_marker_top.png", "lootchests_marker_side.png"},
         groups = marker_groups,
         paramtype2 = "facedir",
@@ -103,7 +105,7 @@ lootchests.register_lootchest = function(def)
 
     if not debug then
         minetest.register_lbm({
-            label = "Upgrade " .. def.description,
+            label = S("Upgrade") .. " " .. def.description,
             name = def.name .. "_marker_replace",
             nodenames = def.name .. "_marker",
             run_at_every_load = true,
