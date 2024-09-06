@@ -1,6 +1,8 @@
+local S = minetest.get_translator(minetest.get_current_modname())
+
 lootchests.register_lootchest({
     name = "lootchests_magic_materials:rune_chest",
-    description = "Rune Chest",
+    description = S("Rune Chest"),
     tiles = {
         "lootchests_magic_materials_rune_chest_top.png",
         "lootchests_magic_materials_rune_chest_top.png",
@@ -22,7 +24,7 @@ lootchests.register_lootchest({
 
 lootchests.register_lootchest({
     name = "lootchests_magic_materials:rune_urn",
-    description = "Rune Urn",
+    description = S("Rune Urn"),
     tiles = {
         "lootchests_magic_materials_rune_urn_top.png",
         "lootchests_magic_materials_rune_urn_top.png",
@@ -37,4 +39,3 @@ lootchests.register_lootchest({
     slot_spawn_chance = 50,
     slots = 24,
 })
-
