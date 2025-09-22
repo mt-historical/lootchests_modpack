@@ -14,7 +14,7 @@ local items = {
     {"farming:pea_pod", 4},
     {"farming:peas", 8},
     {"farming:onion", 4},
-    {"farming:melon", 1},
+    {"farming:melon_slice", 1},
     {"farming:seed_hemp", 4},
     {"farming:hemp_leaf", 8},
     {"farming:hemp_rope", 4},
